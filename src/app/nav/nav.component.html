@@ -1,0 +1,10 @@
+<mat-toolbar *ngIf="loginService.isLoggedIn$ | async" color="primary">
+  <button mat-flat-button color="primary" (click)="navigate('list')">
+    List
+  </button>
+  <button mat-flat-button color="primary" (click)="navigate('create')">
+    Create
+  </button>
+  <span class="spacer"></span>
+  <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+</mat-toolbar>

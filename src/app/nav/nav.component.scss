@@ -1,0 +1,14 @@
+.spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar {
+  padding: 0;
+  align-items: stretch;
+
+  button {
+    font-weight: 400;
+    width: 128px;
+    font-size: 105%;
+    color: #4b2c20;
+  }
+}

@@ -1,0 +1,41 @@
+<ng-container *ngIf="item$ | async as todo">
+  <form
+    ngForm
+    #form="ngForm"
+    (ngSubmit)="submit(form.form, todo.id)"
+    class="update-form"
+  >
+    <span>Enter new data:</span>
+    <mat-form-field appearance="standard">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Title"
+        [ngModel]="todo.title"
+        name="title"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>User ID</mat-label>
+      <input
+        matInput
+        type="number"
+        [ngModel]="todo.userId"
+        name="userId"
+        placeholder="User ID"
+        required
+      />
+    </mat-form-field>
+
+    <mat-slide-toggle [ngModel]="todo.completed" name="completed"
+      >Completed</mat-slide-toggle
+    >
+
+    <button mat-raised-button color="primary" [disabled]="!form.valid">
+      Save
+    </button>
+  </form>
+</ng-container>
